@@ -1,3 +1,6 @@
+# Developer - Kartikey Baghel
+# Email - kartikeybaghel@hotmail.com
+
 import os
 import json
 from tkinter import messagebox
