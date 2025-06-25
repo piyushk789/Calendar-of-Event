@@ -22,7 +22,7 @@
 Calendar-of-Event/
 │
 ├── Calendar of Event.py              # Main GUI application (Offline version)
-├── Calendar of Event-online.py       # Optional online version (if applicable)
+├── Calendar of Event-online.py       # Optional online version (CLI file)
 ├── Calendar of Event.exe             # Standalone executable (for Windows)
 │
 ├── Data\_Extractor.py                 # Script to extract + prepare data from raw images and save to JSON
@@ -99,7 +99,7 @@ To install:
 
 ---
 
-## 👤 Author
+## 👤 Developer
 
 **Kartikey Baghel**
 📍 India
