@@ -7,7 +7,7 @@ from datetime import datetime
 
 def combine(path): return os.path.join("icons", path)
 
-class LightModeApp(ctk.CTk):
+class Main(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.theme_icon = "sun.png"
@@ -194,7 +194,7 @@ class LightModeApp(ctk.CTk):
 
 
 if __name__ == "__main__":
-    app = LightModeApp()
+    app = Main()
     app.background_process()
     app.screen_()
     app.change_theme()
