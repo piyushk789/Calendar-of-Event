@@ -1,28 +1,23 @@
 import os
 import re
-import threading
-import concurrent.futures
 from tkinter import messagebox
 import requests
 from pathlib import Path
 from datetime import datetime
 from bs4 import BeautifulSoup as Bs
 from functools import wraps
-from time import perf_counter, sleep
+from time import perf_counter
 from typing import Callable, Any
 
 
 def get_time(func: Callable) -> Callable:
     @wraps(func)
     def wrapper(*args, **kwargs) -> Any:
-        # Note that timing your code once isn't the most reliable option
-        # for timing your code. Look into the timeit module for more accurate
-        # timing.
         start_time: float = perf_counter()
         result: Any = func(*args, **kwargs)
         end_time: float = perf_counter()
 
-        # print(f'"{func.__name__}()" took {end_time - start_time:.3f} seconds to execute')
+        print(f'"{func.__name__}()" took {end_time - start_time:.3f} seconds to execute')
         return result
 
     return wrapper
@@ -123,14 +118,14 @@ if __name__ == '__main__':
 
     td = TodayDay()
 
-    #
-    # def running(m, d):
-    #     td.month = m
-    #     for i in range(1, d + 1):
-    #         td.day = i
-    #         print(f"{td.day}) Working on {td.day} - {td.month}")
-    #         td.loop_of_downloads()
-    #         print(f"Complete on {td.day} - {td.month}")
-    # for mo, da in calendar.items():
-    #     running(mo, da)
+
+    def running(m, d):
+        td.month = m
+        for i in range(1, d + 1):
+            td.day = i
+            print(f"{td.day}) Working on {td.day} - {td.month}")
+            td.loop_of_downloads()
+            print(f"Complete on {td.day} - {td.month}")
+    for mo, da in calendar.items():
+        running(mo, da)
 
